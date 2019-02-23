@@ -1,0 +1,28 @@
+inp 
+       sta a
+       inp
+       sta b
+prova  lda a
+       sub b
+       brp esegui
+       add b
+       sta resto
+quit   lda ris
+       out
+       lda resto
+       out 
+       hlt
+esegui lda a
+       sub b
+       sta a
+       lda one
+       add ris
+       sta ris
+       lda a 
+       brz quit
+       bra prova
+a      dat
+b      dat
+one    dat 1
+ris    dat 0
+resto  dat
